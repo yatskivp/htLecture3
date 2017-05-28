@@ -1,8 +1,20 @@
 Завдання 1
 
+
 db.home.find({
 	$and : [
 			{"scores.score" : {$gt : 87}},
 			{"scores.score" : {$lt : 93}}
 	]
 }).pretty()
+
+
+Завдання 2
+
+db.home.aggregate(
+	{$unwind: "$scores"}, 
+	{$match: {"scores.type": "exam"}}, 
+	{$match: {"scores.score" : {$gt : 90}}},
+	{$project: {_id : 0, name : 1, scores : 1}}
+);
+
