@@ -1,0 +1,8 @@
+Завдання 1
+
+db.home.find({
+	$and : [
+			{"scores.score" : {$gt : 87}},
+			{"scores.score" : {$lt : 93}}
+	]
+}).pretty()
