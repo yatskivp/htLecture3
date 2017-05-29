@@ -1,11 +1,11 @@
 Завдання 1
 
-db.home.find({
-	$and : [
-			{"scores.score" : {$gt : 87}},
-			{"scores.score" : {$lt : 93}}
-	]
-}).pretty()
+db.home.find(
+   { scores: { $elemMatch: { $and : [
+			{score : {$gt : 87}},
+			{score : {$lt : 93}}
+	] } } }
+)
 
 
 Завдання 2
