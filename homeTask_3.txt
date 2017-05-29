@@ -1,6 +1,5 @@
 Завдання 1
 
-
 db.home.find({
 	$and : [
 			{"scores.score" : {$gt : 87}},
@@ -17,4 +16,13 @@ db.home.aggregate(
 	{$match: {"scores.score" : {$gt : 90}}},
 	{$project: {_id : 0, name : 1, scores : 1}}
 );
+
+
+Завдання 3
+
+db.home.update(
+	{"name" : "Dusti Lemmond"},
+	{$set : {"accepted":"true"}},
+	{multi:true}
+).pretty();
 
