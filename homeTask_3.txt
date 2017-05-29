@@ -1,4 +1,4 @@
-Завдання 1
+Task 1
 
 db.home.find(
    { scores: { $elemMatch: { $and : [
@@ -8,7 +8,7 @@ db.home.find(
 )
 
 
-Завдання 2
+Task 2
 
 db.home.aggregate(
 	{$unwind: "$scores"}, 
@@ -18,7 +18,7 @@ db.home.aggregate(
 );
 
 
-Завдання 3
+Task 3
 
 db.home.update(
 	{"name" : "Dusti Lemmond"},
